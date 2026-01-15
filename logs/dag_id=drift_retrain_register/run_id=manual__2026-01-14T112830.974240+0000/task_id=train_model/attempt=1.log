@@ -1,0 +1,64 @@
+[2026-01-14T11:28:40.982+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:28:30.974240+00:00 [queued]>
+[2026-01-14T11:28:40.992+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:28:30.974240+00:00 [queued]>
+[2026-01-14T11:28:40.992+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2026-01-14T11:28:41.004+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): train_model> on 2026-01-14 11:28:30.974240+00:00
+[2026-01-14T11:28:41.010+0000] {standard_task_runner.py:57} INFO - Started process 290 to run task
+[2026-01-14T11:28:41.013+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'drift_retrain_register', 'train_model', 'manual__2026-01-14T11:28:30.974240+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/drift_retrain_register_dag.py', '--cfg-path', '/tmp/tmps5fdtvdr']
+[2026-01-14T11:28:41.016+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask train_model
+[2026-01-14T11:28:41.076+0000] {task_command.py:416} INFO - Running <TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:28:30.974240+00:00 [running]> on host 2688c1043fa5
+[2026-01-14T11:28:41.151+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_retrain_register' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T11:28:30.974240+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-14T11:28:30.974240+00:00'
+[2026-01-14T11:28:41.152+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-14T11:28:41.153+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/train_pycaret.py']
+[2026-01-14T11:28:41.166+0000] {subprocess.py:86} INFO - Output:
+[2026-01-14T11:28:44.682+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-01-14T11:28:44.682+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/train_pycaret.py", line 88, in <module>
+[2026-01-14T11:28:44.683+0000] {subprocess.py:93} INFO -     main()
+[2026-01-14T11:28:44.683+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/train_pycaret.py", line 42, in main
+[2026-01-14T11:28:44.683+0000] {subprocess.py:93} INFO -     setup(
+[2026-01-14T11:28:44.683+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/regression/functional.py", line 593, in setup
+[2026-01-14T11:28:44.684+0000] {subprocess.py:93} INFO -     return exp.setup(
+[2026-01-14T11:28:44.684+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/regression/oop.py", line 671, in setup
+[2026-01-14T11:28:44.684+0000] {subprocess.py:93} INFO -     self._initialize_setup(
+[2026-01-14T11:28:44.684+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/internal/pycaret_experiment/tabular_experiment.py", line 328, in _initialize_setup
+[2026-01-14T11:28:44.685+0000] {subprocess.py:93} INFO -     self._check_environment()
+[2026-01-14T11:28:44.685+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/internal/pycaret_experiment/pycaret_experiment.py", line 121, in _check_environment
+[2026-01-14T11:28:44.685+0000] {subprocess.py:93} INFO -     self.logger.info(show_versions(logger=self.logger))
+[2026-01-14T11:28:44.686+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/utils/_show_versions.py", line 165, in show_versions
+[2026-01-14T11:28:44.686+0000] {subprocess.py:93} INFO -     optional_deps_info = _get_deps_info(logger=logger)
+[2026-01-14T11:28:44.686+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/utils/_show_versions.py", line 130, in _get_deps_info
+[2026-01-14T11:28:44.686+0000] {subprocess.py:93} INFO -     ver = get_module_version(modname)
+[2026-01-14T11:28:44.687+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/utils/_dependencies.py", line 81, in get_module_version
+[2026-01-14T11:28:44.687+0000] {subprocess.py:93} INFO -     version = _get_module_version(modname)
+[2026-01-14T11:28:44.687+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/utils/_dependencies.py", line 75, in _get_module_version
+[2026-01-14T11:28:44.688+0000] {subprocess.py:93} INFO -     installed_modules[modname] = _try_import_and_get_module_version(modname)
+[2026-01-14T11:28:44.688+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/utils/_dependencies.py", line 28, in _try_import_and_get_module_version
+[2026-01-14T11:28:44.688+0000] {subprocess.py:93} INFO -     mod = import_module(modname)
+[2026-01-14T11:28:44.689+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[2026-01-14T11:28:44.689+0000] {subprocess.py:93} INFO -     return _bootstrap._gcd_import(name[level:], package, level)
+[2026-01-14T11:28:44.689+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[2026-01-14T11:28:44.689+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[2026-01-14T11:28:44.690+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[2026-01-14T11:28:44.690+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[2026-01-14T11:28:44.690+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+[2026-01-14T11:28:44.691+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2026-01-14T11:28:44.691+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/lightgbm/__init__.py", line 11, in <module>
+[2026-01-14T11:28:44.691+0000] {subprocess.py:93} INFO -     from .basic import Booster, Dataset, Sequence, register_logger
+[2026-01-14T11:28:44.691+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/lightgbm/basic.py", line 9, in <module>
+[2026-01-14T11:28:44.692+0000] {subprocess.py:93} INFO -     from .libpath import _LIB  # isort: skip
+[2026-01-14T11:28:44.692+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/lightgbm/libpath.py", line 49, in <module>
+[2026-01-14T11:28:44.692+0000] {subprocess.py:93} INFO -     _LIB = ctypes.cdll.LoadLibrary(_find_lib_path()[0])
+[2026-01-14T11:28:44.693+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ctypes/__init__.py", line 451, in LoadLibrary
+[2026-01-14T11:28:44.693+0000] {subprocess.py:93} INFO -     return self._dlltype(name)
+[2026-01-14T11:28:44.693+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+[2026-01-14T11:28:44.693+0000] {subprocess.py:93} INFO -     self._handle = _dlopen(self._name, mode)
+[2026-01-14T11:28:44.694+0000] {subprocess.py:93} INFO - OSError: libgomp.so.1: cannot open shared object file: No such file or directory
+[2026-01-14T11:28:45.085+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-01-14T11:28:45.100+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-14T11:28:45.103+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=drift_retrain_register, task_id=train_model, execution_date=20260114T112830, start_date=20260114T112840, end_date=20260114T112845
+[2026-01-14T11:28:45.116+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 12 for task train_model (Bash command failed. The command returned a non-zero exit code 1.; 290)
+[2026-01-14T11:28:45.157+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2026-01-14T11:28:45.180+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

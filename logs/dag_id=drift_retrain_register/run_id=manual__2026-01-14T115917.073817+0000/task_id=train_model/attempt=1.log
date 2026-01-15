@@ -1,0 +1,94 @@
+[2026-01-14T11:59:26.932+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:59:17.073817+00:00 [queued]>
+[2026-01-14T11:59:26.941+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:59:17.073817+00:00 [queued]>
+[2026-01-14T11:59:26.941+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2026-01-14T11:59:26.954+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): train_model> on 2026-01-14 11:59:17.073817+00:00
+[2026-01-14T11:59:26.961+0000] {standard_task_runner.py:57} INFO - Started process 287 to run task
+[2026-01-14T11:59:26.964+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'drift_retrain_register', 'train_model', 'manual__2026-01-14T11:59:17.073817+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/drift_retrain_register_dag.py', '--cfg-path', '/tmp/tmpjwig2tvr']
+[2026-01-14T11:59:26.967+0000] {standard_task_runner.py:85} INFO - Job 30: Subtask train_model
+[2026-01-14T11:59:27.029+0000] {task_command.py:416} INFO - Running <TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:59:17.073817+00:00 [running]> on host 6b4cb5f5d482
+[2026-01-14T11:59:27.106+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_retrain_register' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T11:59:17.073817+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-14T11:59:17.073817+00:00'
+[2026-01-14T11:59:27.107+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-14T11:59:27.109+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/train_pycaret.py']
+[2026-01-14T11:59:27.123+0000] {subprocess.py:86} INFO - Output:
+[2026-01-14T11:59:33.533+0000] {subprocess.py:93} INFO - 2026/01/14 11:59:33 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2026-01-14T11:59:33.534+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2026-01-14T11:59:33.534+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2026-01-14T11:59:33.534+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2026-01-14T11:59:33.535+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2026-01-14T11:59:33.535+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:59:33.535+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2026-01-14T11:59:33.535+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:59:33.536+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2026-01-14T11:59:33.536+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2026-01-14T11:59:33.536+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2026-01-14T11:59:33.536+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2026-01-14T11:59:33.537+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2026-01-14T11:59:33.537+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:59:33.537+0000] {subprocess.py:93} INFO - Example:
+[2026-01-14T11:59:33.538+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2026-01-14T11:59:33.538+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:05:32.615+0000] {subprocess.py:93} INFO - Processing:   0%|          | 0/79 [00:00<?, ?it/s]Processing:   6%|▋         | 5/79 [00:03<00:56,  1.31it/s]Processing:   9%|▉         | 7/79 [00:03<00:37,  1.94it/s]Processing:  11%|█▏        | 9/79 [00:06<00:54,  1.28it/s]Processing:  14%|█▍        | 11/79 [00:06<00:37,  1.82it/s]Processing:  16%|█▋        | 13/79 [00:09<00:48,  1.35it/s]Processing:  19%|█▉        | 15/79 [00:09<00:34,  1.88it/s]Processing:  22%|██▏       | 17/79 [00:11<00:44,  1.39it/s]Processing:  24%|██▍       | 19/79 [00:11<00:31,  1.91it/s]Processing:  27%|██▋       | 21/79 [00:11<00:23,  2.51it/s]Processing:  29%|██▉       | 23/79 [00:11<00:16,  3.35it/s]Processing:  32%|███▏      | 25/79 [00:12<00:13,  4.13it/s]Processing:  34%|███▍      | 27/79 [00:12<00:09,  5.29it/s]Processing:  37%|███▋      | 29/79 [00:12<00:08,  6.02it/s]Processing:  39%|███▉      | 31/79 [00:12<00:06,  7.35it/s]Processing:  42%|████▏     | 33/79 [00:12<00:05,  7.77it/s]Processing:  44%|████▍     | 35/79 [00:13<00:04,  9.09it/s]Processing:  47%|████▋     | 37/79 [00:13<00:06,  6.68it/s]Processing:  49%|████▉     | 39/79 [00:13<00:04,  8.03it/s]Processing:  52%|█████▏    | 41/79 [00:14<00:07,  5.20it/s]Processing:  54%|█████▍    | 43/79 [00:14<00:05,  6.43it/s]Processing:  57%|█████▋    | 45/79 [00:15<00:11,  3.04it/s]Processing:  59%|█████▉    | 47/79 [00:16<00:08,  4.00it/s]Processing:  62%|██████▏   | 49/79 [00:16<00:06,  4.44it/s]Processing:  65%|██████▍   | 51/79 [00:16<00:04,  5.62it/s]Processing:  67%|██████▋   | 53/79 [00:19<00:16,  1.61it/s]Processing:  70%|██████▉   | 55/79 [00:19<00:10,  2.19it/s]Processing:  72%|███████▏  | 57/79 [00:22<00:15,  1.42it/s]Processing:  75%|███████▍  | 59/79 [00:22<00:10,  1.95it/s]Processing:  77%|███████▋  | 61/79 [00:24<00:11,  1.61it/s]Processing:  80%|███████▉  | 63/79 [00:24<00:07,  2.20it/s]Processing:  82%|████████▏ | 65/79 [00:27<00:10,  1.37it/s]Processing:  85%|████████▍ | 67/79 [00:27<00:06,  1.89it/s]Processing:  87%|████████▋ | 69/79 [04:54<06:44, 40.50s/it]Processing:  90%|████████▉ | 71/79 [04:55<03:46, 28.37s/it]Processing:  92%|█████████▏| 73/79 [04:55<01:59, 19.89s/it]Processing:  95%|█████████▍| 75/79 [04:55<00:55, 13.94s/it]Processing:  97%|█████████▋| 77/79 [04:55<00:19,  9.83s/it]Processing:  99%|█████████▊| 78/79 [04:58<00:08,  8.49s/it]Processing: 100%|██████████| 79/79 [05:23<00:00, 11.98s/it]                                                                                               Model        MAE           MSE  \
+[2026-01-14T12:05:32.615+0000] {subprocess.py:93} INFO - lightgbm  Light Gradient Boosting Machine   292.7961  3.165640e+05
+[2026-01-14T12:05:32.616+0000] {subprocess.py:93} INFO - et                  Extra Trees Regressor   282.3485  3.287453e+05
+[2026-01-14T12:05:32.616+0000] {subprocess.py:93} INFO - rf                Random Forest Regressor   284.4921  3.367000e+05
+[2026-01-14T12:05:32.616+0000] {subprocess.py:93} INFO - gbr           Gradient Boosting Regressor   409.5639  5.584540e+05
+[2026-01-14T12:05:32.616+0000] {subprocess.py:93} INFO - dt                Decision Tree Regressor   377.2702  5.907948e+05
+[2026-01-14T12:05:32.617+0000] {subprocess.py:93} INFO - knn                 K Neighbors Regressor   554.5845  1.067619e+06
+[2026-01-14T12:05:32.617+0000] {subprocess.py:93} INFO - lasso                    Lasso Regression   745.6345  1.294562e+06
+[2026-01-14T12:05:32.617+0000] {subprocess.py:93} INFO - llar         Lasso Least Angle Regression   745.6518  1.295292e+06
+[2026-01-14T12:05:32.618+0000] {subprocess.py:93} INFO - ridge                    Ridge Regression   748.7299  1.361974e+06
+[2026-01-14T12:05:32.618+0000] {subprocess.py:93} INFO - br                         Bayesian Ridge   748.4364  1.365790e+06
+[2026-01-14T12:05:32.618+0000] {subprocess.py:93} INFO - lr                      Linear Regression   748.3693  1.366714e+06
+[2026-01-14T12:05:32.619+0000] {subprocess.py:93} INFO - huber                     Huber Regressor   847.2610  1.703162e+06
+[2026-01-14T12:05:32.619+0000] {subprocess.py:93} INFO - par          Passive Aggressive Regressor   877.6245  1.745070e+06
+[2026-01-14T12:05:32.619+0000] {subprocess.py:93} INFO - ada                    AdaBoost Regressor  1048.6964  2.009900e+06
+[2026-01-14T12:05:32.619+0000] {subprocess.py:93} INFO - omp           Orthogonal Matching Pursuit  1365.5124  3.482693e+06
+[2026-01-14T12:05:32.620+0000] {subprocess.py:93} INFO - en                            Elastic Net  1231.2390  3.527896e+06
+[2026-01-14T12:05:32.620+0000] {subprocess.py:93} INFO - dummy                     Dummy Regressor  3043.2319  1.602737e+07
+[2026-01-14T12:05:32.620+0000] {subprocess.py:93} INFO - lar                Least Angle Regression  2253.1910  1.040033e+09
+[2026-01-14T12:05:32.620+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:05:32.621+0000] {subprocess.py:93} INFO -                 RMSE       R2   RMSLE    MAPE  TT (Sec)
+[2026-01-14T12:05:32.621+0000] {subprocess.py:93} INFO - lightgbm    562.4035   0.9802  0.1120  0.0857   89.1633
+[2026-01-14T12:05:32.621+0000] {subprocess.py:93} INFO - et          573.2453   0.9795  0.0968  0.0701    0.8533
+[2026-01-14T12:05:32.621+0000] {subprocess.py:93} INFO - rf          579.9871   0.9790  0.0965  0.0696    1.1033
+[2026-01-14T12:05:32.622+0000] {subprocess.py:93} INFO - gbr         747.1243   0.9652  0.2171  0.1300    0.9133
+[2026-01-14T12:05:32.622+0000] {subprocess.py:93} INFO - dt          768.5252   0.9631  0.1311  0.0910    0.1100
+[2026-01-14T12:05:32.622+0000] {subprocess.py:93} INFO - knn        1033.2319   0.9334  0.1997  0.1556    0.4867
+[2026-01-14T12:05:32.623+0000] {subprocess.py:93} INFO - lasso      1137.7434   0.9192  0.5848  0.3902    0.8567
+[2026-01-14T12:05:32.623+0000] {subprocess.py:93} INFO - llar       1138.0597   0.9192  0.5842  0.3902    0.0733
+[2026-01-14T12:05:32.623+0000] {subprocess.py:93} INFO - ridge      1165.9578   0.9150  0.5845  0.3946    0.7667
+[2026-01-14T12:05:32.623+0000] {subprocess.py:93} INFO - br         1167.4984   0.9148  0.5829  0.3945    0.0733
+[2026-01-14T12:05:32.624+0000] {subprocess.py:93} INFO - lr         1167.8705   0.9147  0.5836  0.3945    1.2667
+[2026-01-14T12:05:32.624+0000] {subprocess.py:93} INFO - huber      1304.5295   0.8937  0.6559  0.4485    0.2333
+[2026-01-14T12:05:32.624+0000] {subprocess.py:93} INFO - par        1314.9027   0.8913  0.8110  0.5799    0.1600
+[2026-01-14T12:05:32.624+0000] {subprocess.py:93} INFO - ada        1417.3008   0.8746  0.4141  0.4428    0.5800
+[2026-01-14T12:05:32.625+0000] {subprocess.py:93} INFO - omp        1866.1294   0.7827  0.7710  0.6655    0.0733
+[2026-01-14T12:05:32.625+0000] {subprocess.py:93} INFO - en         1877.9058   0.7799  0.6704  0.4588    0.7567
+[2026-01-14T12:05:32.625+0000] {subprocess.py:93} INFO - dummy      4003.3708  -0.0001  1.1288  1.8875    0.0767
+[2026-01-14T12:05:32.630+0000] {subprocess.py:93} INFO - lar       19894.6002 -63.6946  0.8918  1.1995    0.0733
+[2026-01-14T12:05:32.630+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-01-14T12:05:32.630+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/train_pycaret.py", line 90, in <module>
+[2026-01-14T12:05:32.631+0000] {subprocess.py:93} INFO -     mlflow.pyfunc.log_model("model", python_model=_PyfuncWrapper(final))
+[2026-01-14T12:05:32.631+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/train_pycaret.py", line 54, in main
+[2026-01-14T12:05:32.631+0000] {subprocess.py:93} INFO -     )
+[2026-01-14T12:05:32.632+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/utils/generic.py", line 965, in wrapper
+[2026-01-14T12:05:32.632+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2026-01-14T12:05:32.632+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/regression/functional.py", line 1956, in finalize_model
+[2026-01-14T12:05:32.632+0000] {subprocess.py:93} INFO -     return _CURRENT_EXPERIMENT.finalize_model(
+[2026-01-14T12:05:32.633+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/regression/oop.py", line 2248, in finalize_model
+[2026-01-14T12:05:32.633+0000] {subprocess.py:93} INFO -     return super().finalize_model(
+[2026-01-14T12:05:32.633+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 4730, in finalize_model
+[2026-01-14T12:05:32.633+0000] {subprocess.py:93} INFO -     pipeline_final, model_fit_time = self._create_model(
+[2026-01-14T12:05:32.634+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1345, in _create_model
+[2026-01-14T12:05:32.637+0000] {subprocess.py:93} INFO -     raise ValueError(
+[2026-01-14T12:05:32.637+0000] {subprocess.py:93} INFO - ValueError: Estimator [LGBMRegressor(n_jobs=-1, random_state=42), ExtraTreesRegressor(n_jobs=-1, random_state=42), RandomForestRegressor(n_jobs=-1, random_state=42)] does not have the required fit() method.
+[2026-01-14T12:05:33.912+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-01-14T12:05:33.926+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-14T12:05:33.929+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=drift_retrain_register, task_id=train_model, execution_date=20260114T115917, start_date=20260114T115926, end_date=20260114T120533
+[2026-01-14T12:05:33.948+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 30 for task train_model (Bash command failed. The command returned a non-zero exit code 1.; 287)
+[2026-01-14T12:05:33.981+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2026-01-14T12:05:34.010+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

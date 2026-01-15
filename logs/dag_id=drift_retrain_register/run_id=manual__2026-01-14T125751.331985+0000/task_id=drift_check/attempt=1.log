@@ -1,0 +1,17 @@
+[2026-01-14T12:57:55.226+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_retrain_register.drift_check manual__2026-01-14T12:57:51.331985+00:00 [queued]>
+[2026-01-14T12:57:55.233+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_retrain_register.drift_check manual__2026-01-14T12:57:51.331985+00:00 [queued]>
+[2026-01-14T12:57:55.234+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2026-01-14T12:57:55.247+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): drift_check> on 2026-01-14 12:57:51.331985+00:00
+[2026-01-14T12:57:55.253+0000] {standard_task_runner.py:57} INFO - Started process 1874 to run task
+[2026-01-14T12:57:55.257+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'drift_retrain_register', 'drift_check', 'manual__2026-01-14T12:57:51.331985+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/drift_retrain_register_dag.py', '--cfg-path', '/tmp/tmpy86v5cp5']
+[2026-01-14T12:57:55.259+0000] {standard_task_runner.py:85} INFO - Job 61: Subtask drift_check
+[2026-01-14T12:57:55.319+0000] {task_command.py:416} INFO - Running <TaskInstance: drift_retrain_register.drift_check manual__2026-01-14T12:57:51.331985+00:00 [running]> on host c99f43e44d79
+[2026-01-14T12:57:55.401+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_retrain_register' AIRFLOW_CTX_TASK_ID='drift_check' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T12:57:51.331985+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-14T12:57:51.331985+00:00'
+[2026-01-14T12:57:55.402+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-14T12:57:55.404+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/drift_check.py']
+[2026-01-14T12:57:55.416+0000] {subprocess.py:86} INFO - Output:
+[2026-01-14T12:57:56.164+0000] {subprocess.py:93} INFO - drift=1
+[2026-01-14T12:57:56.224+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-01-14T12:57:56.254+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=drift_retrain_register, task_id=drift_check, execution_date=20260114T125751, start_date=20260114T125755, end_date=20260114T125756
+[2026-01-14T12:57:56.311+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-01-14T12:57:56.339+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

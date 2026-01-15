@@ -1,0 +1,61 @@
+[2026-01-14T11:40:03.318+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:39:56.217659+00:00 [queued]>
+[2026-01-14T11:40:03.326+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:39:56.217659+00:00 [queued]>
+[2026-01-14T11:40:03.326+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2026-01-14T11:40:03.338+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): train_model> on 2026-01-14 11:39:56.217659+00:00
+[2026-01-14T11:40:03.345+0000] {standard_task_runner.py:57} INFO - Started process 513 to run task
+[2026-01-14T11:40:03.348+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'drift_retrain_register', 'train_model', 'manual__2026-01-14T11:39:56.217659+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/drift_retrain_register_dag.py', '--cfg-path', '/tmp/tmpwa0p8ggy']
+[2026-01-14T11:40:03.350+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask train_model
+[2026-01-14T11:40:03.408+0000] {task_command.py:416} INFO - Running <TaskInstance: drift_retrain_register.train_model manual__2026-01-14T11:39:56.217659+00:00 [running]> on host 23d679e944e7
+[2026-01-14T11:40:03.482+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_retrain_register' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T11:39:56.217659+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-14T11:39:56.217659+00:00'
+[2026-01-14T11:40:03.483+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-14T11:40:03.484+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/train_pycaret.py']
+[2026-01-14T11:40:03.498+0000] {subprocess.py:86} INFO - Output:
+[2026-01-14T11:40:09.152+0000] {subprocess.py:93} INFO - 2026/01/14 11:40:09 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2026-01-14T11:40:09.153+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2026-01-14T11:40:09.153+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2026-01-14T11:40:09.153+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2026-01-14T11:40:09.154+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2026-01-14T11:40:09.154+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:40:09.154+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2026-01-14T11:40:09.154+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:40:09.155+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2026-01-14T11:40:09.155+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2026-01-14T11:40:09.155+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2026-01-14T11:40:09.155+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2026-01-14T11:40:09.156+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2026-01-14T11:40:09.156+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:40:09.156+0000] {subprocess.py:93} INFO - Example:
+[2026-01-14T11:40:09.156+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2026-01-14T11:40:09.157+0000] {subprocess.py:93} INFO - 
+[2026-01-14T11:56:54.930+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-01-14T11:56:54.950+0000] {process_utils.py:131} INFO - Sending 15 to group 513. PIDs of all processes in the group: [514, 621, 622, 624, 625, 626, 627, 628, 629, 630, 631, 633, 634, 513]
+[2026-01-14T11:56:54.955+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 513
+[2026-01-14T11:56:54.956+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-01-14T11:56:54.963+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2026-01-14T11:56:55.033+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2026-01-14T11:56:55.041+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=drift_retrain_register, task_id=train_model, execution_date=20260114T113956, start_date=20260114T114003, end_date=20260114T115655
+[2026-01-14T11:56:55.090+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 25 for task train_model (Task received SIGTERM signal; 513)
+[2026-01-14T11:56:55.209+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=514, status='terminated', started='11:40:03') (514) terminated with exit code None
+[2026-01-14T11:56:55.210+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=634, status='terminated', started='11:40:09') (634) terminated with exit code None
+[2026-01-14T11:56:55.211+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=629, status='terminated', started='11:40:09') (629) terminated with exit code None
+[2026-01-14T11:56:55.218+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=630, status='terminated', started='11:40:09') (630) terminated with exit code None
+[2026-01-14T11:56:55.219+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=625, status='terminated', started='11:40:09') (625) terminated with exit code None
+[2026-01-14T11:56:55.219+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=628, status='terminated', started='11:40:09') (628) terminated with exit code None
+[2026-01-14T11:56:55.220+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=631, status='terminated', started='11:40:09') (631) terminated with exit code None
+[2026-01-14T11:56:55.220+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=626, status='terminated', started='11:40:09') (626) terminated with exit code None
+[2026-01-14T11:56:55.313+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=621, status='terminated', started='11:40:09') (621) terminated with exit code None
+[2026-01-14T11:56:55.314+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=624, status='terminated', started='11:40:09') (624) terminated with exit code None
+[2026-01-14T11:56:55.314+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=633, status='terminated', started='11:40:09') (633) terminated with exit code None
+[2026-01-14T11:56:55.315+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=513, status='terminated', exitcode=1, started='11:40:03') (513) terminated with exit code 1
+[2026-01-14T11:56:55.315+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=627, status='terminated', started='11:40:09') (627) terminated with exit code None
+[2026-01-14T11:56:55.316+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=622, status='terminated', started='11:40:09') (622) terminated with exit code None
+[2026-01-14T11:56:55.316+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2026-01-14T11:56:55.341+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

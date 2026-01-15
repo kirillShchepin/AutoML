@@ -1,0 +1,20 @@
+[2026-01-14T12:52:34.059+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_retrain_register.register_model manual__2026-01-14T12:52:02.898710+00:00 [queued]>
+[2026-01-14T12:52:34.070+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_retrain_register.register_model manual__2026-01-14T12:52:02.898710+00:00 [queued]>
+[2026-01-14T12:52:34.070+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2026-01-14T12:52:34.086+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): register_model> on 2026-01-14 12:52:02.898710+00:00
+[2026-01-14T12:52:34.093+0000] {standard_task_runner.py:57} INFO - Started process 1751 to run task
+[2026-01-14T12:52:34.096+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'drift_retrain_register', 'register_model', 'manual__2026-01-14T12:52:02.898710+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/drift_retrain_register_dag.py', '--cfg-path', '/tmp/tmp_xtjzpkw']
+[2026-01-14T12:52:34.099+0000] {standard_task_runner.py:85} INFO - Job 59: Subtask register_model
+[2026-01-14T12:52:34.164+0000] {task_command.py:416} INFO - Running <TaskInstance: drift_retrain_register.register_model manual__2026-01-14T12:52:02.898710+00:00 [running]> on host c99f43e44d79
+[2026-01-14T12:52:34.247+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_retrain_register' AIRFLOW_CTX_TASK_ID='register_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T12:52:02.898710+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-14T12:52:02.898710+00:00'
+[2026-01-14T12:52:34.249+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-14T12:52:34.250+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/register_mlflow.py']
+[2026-01-14T12:52:34.263+0000] {subprocess.py:86} INFO - Output:
+[2026-01-14T12:52:36.312+0000] {subprocess.py:93} INFO - 2026/01/14 12:52:36 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: diamonds_price_regressor, version 2
+[2026-01-14T12:52:36.332+0000] {subprocess.py:93} INFO - /opt/***/scripts/register_mlflow.py:24: FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/2.9.2/model-registry.html#migrating-from-stages
+[2026-01-14T12:52:36.332+0000] {subprocess.py:93} INFO -   client.transition_model_version_stage(
+[2026-01-14T12:52:36.333+0000] {subprocess.py:93} INFO - model_name=diamonds_price_regressor version=2 stage=Staging
+[2026-01-14T12:52:36.521+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-01-14T12:52:36.552+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=drift_retrain_register, task_id=register_model, execution_date=20260114T125202, start_date=20260114T125234, end_date=20260114T125236
+[2026-01-14T12:52:36.597+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-01-14T12:52:36.615+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

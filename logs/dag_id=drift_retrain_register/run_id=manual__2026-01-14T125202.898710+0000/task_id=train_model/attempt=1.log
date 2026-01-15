@@ -1,0 +1,75 @@
+[2026-01-14T12:52:10.052+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T12:52:02.898710+00:00 [queued]>
+[2026-01-14T12:52:10.061+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_retrain_register.train_model manual__2026-01-14T12:52:02.898710+00:00 [queued]>
+[2026-01-14T12:52:10.062+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2026-01-14T12:52:10.074+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): train_model> on 2026-01-14 12:52:02.898710+00:00
+[2026-01-14T12:52:10.080+0000] {standard_task_runner.py:57} INFO - Started process 1447 to run task
+[2026-01-14T12:52:10.083+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'drift_retrain_register', 'train_model', 'manual__2026-01-14T12:52:02.898710+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/drift_retrain_register_dag.py', '--cfg-path', '/tmp/tmp2hmp3sol']
+[2026-01-14T12:52:10.086+0000] {standard_task_runner.py:85} INFO - Job 58: Subtask train_model
+[2026-01-14T12:52:10.146+0000] {task_command.py:416} INFO - Running <TaskInstance: drift_retrain_register.train_model manual__2026-01-14T12:52:02.898710+00:00 [running]> on host c99f43e44d79
+[2026-01-14T12:52:10.229+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_retrain_register' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T12:52:02.898710+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-14T12:52:02.898710+00:00'
+[2026-01-14T12:52:10.231+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-14T12:52:10.232+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/train_pycaret.py']
+[2026-01-14T12:52:10.247+0000] {subprocess.py:86} INFO - Output:
+[2026-01-14T12:52:15.854+0000] {subprocess.py:93} INFO - 2026/01/14 12:52:15 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2026-01-14T12:52:15.854+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2026-01-14T12:52:15.855+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2026-01-14T12:52:15.855+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2026-01-14T12:52:15.855+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2026-01-14T12:52:15.856+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:52:15.856+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2026-01-14T12:52:15.856+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:52:15.856+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2026-01-14T12:52:15.857+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2026-01-14T12:52:15.857+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2026-01-14T12:52:15.857+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2026-01-14T12:52:15.857+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2026-01-14T12:52:15.858+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:52:15.858+0000] {subprocess.py:93} INFO - Example:
+[2026-01-14T12:52:15.858+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2026-01-14T12:52:15.859+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:52:16.374+0000] {subprocess.py:93} INFO - stage=setup start
+[2026-01-14T12:52:16.375+0000] {subprocess.py:93} INFO -                     Description            Value
+[2026-01-14T12:52:16.375+0000] {subprocess.py:93} INFO - 0                    Session id               42
+[2026-01-14T12:52:16.375+0000] {subprocess.py:93} INFO - 1                        Target            price
+[2026-01-14T12:52:16.376+0000] {subprocess.py:93} INFO - 2                   Target type       Regression
+[2026-01-14T12:52:16.376+0000] {subprocess.py:93} INFO - 3           Original data shape        (500, 10)
+[2026-01-14T12:52:16.376+0000] {subprocess.py:93} INFO - 4        Transformed data shape        (500, 27)
+[2026-01-14T12:52:16.377+0000] {subprocess.py:93} INFO - 5   Transformed train set shape        (350, 27)
+[2026-01-14T12:52:16.377+0000] {subprocess.py:93} INFO - 6    Transformed test set shape        (150, 27)
+[2026-01-14T12:52:16.377+0000] {subprocess.py:93} INFO - 7              Numeric features                6
+[2026-01-14T12:52:16.378+0000] {subprocess.py:93} INFO - 8          Categorical features                3
+[2026-01-14T12:52:16.378+0000] {subprocess.py:93} INFO - 9                    Preprocess             True
+[2026-01-14T12:52:16.378+0000] {subprocess.py:93} INFO - 10              Imputation type           simple
+[2026-01-14T12:52:16.378+0000] {subprocess.py:93} INFO - 11           Numeric imputation             mean
+[2026-01-14T12:52:16.379+0000] {subprocess.py:93} INFO - 12       Categorical imputation             mode
+[2026-01-14T12:52:16.379+0000] {subprocess.py:93} INFO - 13     Maximum one-hot encoding               25
+[2026-01-14T12:52:16.379+0000] {subprocess.py:93} INFO - 14              Encoding method             None
+[2026-01-14T12:52:16.379+0000] {subprocess.py:93} INFO - 15               Fold Generator            KFold
+[2026-01-14T12:52:16.380+0000] {subprocess.py:93} INFO - 16                  Fold Number                2
+[2026-01-14T12:52:16.380+0000] {subprocess.py:93} INFO - 17                     CPU Jobs               -1
+[2026-01-14T12:52:16.380+0000] {subprocess.py:93} INFO - 18                      Use GPU            False
+[2026-01-14T12:52:16.381+0000] {subprocess.py:93} INFO - 19               Log Experiment     MlflowLogger
+[2026-01-14T12:52:16.381+0000] {subprocess.py:93} INFO - 20              Experiment Name  diamonds_automl
+[2026-01-14T12:52:16.381+0000] {subprocess.py:93} INFO - 21                          USI             f328
+[2026-01-14T12:52:16.381+0000] {subprocess.py:93} INFO - stage=setup done seconds=2
+[2026-01-14T12:52:16.382+0000] {subprocess.py:93} INFO - stage=compare_models start
+[2026-01-14T12:52:32.434+0000] {subprocess.py:93} INFO - Processing:   0%|          | 0/17 [00:00<?, ?it/s]Processing:  29%|██▉       | 5/17 [00:03<00:08,  1.42it/s]Processing:  41%|████      | 7/17 [00:03<00:04,  2.09it/s]Processing:  53%|█████▎    | 9/17 [00:05<00:05,  1.50it/s]Processing:  65%|██████▍   | 11/17 [00:05<00:02,  2.14it/s]Processing:  76%|███████▋  | 13/17 [00:07<00:02,  1.55it/s]Processing:  88%|████████▊ | 15/17 [00:08<00:00,  2.16it/s]Processing: 100%|██████████| 17/17 [00:08<00:00,  2.88it/s]                                                                              Model        MAE           MSE       RMSE      R2   RMSLE  \
+[2026-01-14T12:52:32.435+0000] {subprocess.py:93} INFO - lasso   Lasso Regression   920.0133  1.738998e+06  1317.7276  0.9044  0.7272
+[2026-01-14T12:52:32.435+0000] {subprocess.py:93} INFO - lr     Linear Regression   941.0716  1.813267e+06  1345.7808  0.9004  0.7183
+[2026-01-14T12:52:32.435+0000] {subprocess.py:93} INFO - ridge   Ridge Regression  1056.2834  2.145356e+06  1464.5901  0.8825  0.7164
+[2026-01-14T12:52:32.436+0000] {subprocess.py:93} INFO - 
+[2026-01-14T12:52:32.436+0000] {subprocess.py:93} INFO -          MAPE  TT (Sec)
+[2026-01-14T12:52:32.436+0000] {subprocess.py:93} INFO - lasso  0.5691     1.025
+[2026-01-14T12:52:32.436+0000] {subprocess.py:93} INFO - lr     0.5962     1.760
+[2026-01-14T12:52:32.437+0000] {subprocess.py:93} INFO - ridge  0.6345     1.025
+[2026-01-14T12:52:32.437+0000] {subprocess.py:93} INFO - stage=compare_models done seconds=12
+[2026-01-14T12:52:32.440+0000] {subprocess.py:93} INFO - stage=finalize_model start
+[2026-01-14T12:52:32.441+0000] {subprocess.py:93} INFO - stage=finalize_model done seconds=13
+[2026-01-14T12:52:32.442+0000] {subprocess.py:93} INFO - stage=predict_model start
+[2026-01-14T12:52:32.443+0000] {subprocess.py:93} INFO -               Model       MAE          MSE       RMSE      R2   RMSLE    MAPE
+[2026-01-14T12:52:32.444+0000] {subprocess.py:93} INFO - 0  Lasso Regression  960.4006  3217472.938  1793.7316  0.7675  0.6474  0.5161
+[2026-01-14T12:52:32.445+0000] {subprocess.py:93} INFO - stage=predict_model done seconds=13
+[2026-01-14T12:52:33.653+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-01-14T12:52:33.685+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=drift_retrain_register, task_id=train_model, execution_date=20260114T125202, start_date=20260114T125210, end_date=20260114T125233
+[2026-01-14T12:52:33.725+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-01-14T12:52:33.747+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
